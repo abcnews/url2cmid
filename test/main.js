@@ -14,6 +14,8 @@ describe('url2cmid', function(){
 			expect(url2cmid('http://nucwed.aus.aunty.abc.net.au/news/2015-02-17/before-after-test/6088946')).to.be('6088946');
 			expect(url2cmid('http://nucwed.aus.aunty.abc.net.au/news/2015-02-17/before-after-test/6088947?')).to.be('6088947');
 			expect(url2cmid('http://nucwed.aus.aunty.abc.net.au/news/2015-02-17/before-after-test/6088948?querystring=bam')).to.be('6088948');
+			expect(url2cmid('http://nucwed.aus.aunty.abc.net.au/news/2015-02-17/before-after-test/60889475#')).to.be('60889475');
+			expect(url2cmid('http://nucwed.aus.aunty.abc.net.au/news/2015-02-17/before-after-test/60889485#fragment')).to.be('60889485');
 			expect(url2cmid('http://www.abc.net.au/news/2015-02-17/before-after-test/6088949')).to.be('6088949');
 			expect(url2cmid('http://www.abc.net.au/news/6088950')).to.be('6088950');
 			expect(url2cmid('http://www.abc.net.au/news/2015-02-17/before-390843999/6088951')).to.be('6088951');
