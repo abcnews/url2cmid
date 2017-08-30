@@ -1,5 +1,5 @@
 {
-  "name": "url2cmid",
+  "name": "@abcnews/url2cmid",
   "version": "1.0.1",
   "description": "Get a CoreMedia ID from a URL.",
   "main": "index.js",
