@@ -59,6 +59,11 @@ describe('url2cmid', function() {
       expect(
         url2cmid('http://www.abc.net.au/news/image/5706180-16x9-220x124.jpg')
       ).to.be('5706180');
+      expect(
+        url2cmid(
+          'http://www.abc.net.au/cm/lb/8734198/data/sean-spicer-data.jpg'
+        )
+      ).to.be('8734198');
     });
 
     it('should be false', function() {
