@@ -1,12 +1,9 @@
-/* globals describe:true, it:true */
-
-const expect = require('expect.js');
-const url2cmid = require('../index');
+import url2cmid from '../src';
 
 describe('url2cmid', function() {
   describe('export', function() {
     it('should be a function', function() {
-      expect(url2cmid).to.be.a('function');
+      expect(url2cmid).toBeInstanceOf(Function);
     });
   });
 
@@ -16,61 +13,61 @@ describe('url2cmid', function() {
         url2cmid(
           'http://nucwed.aus.aunty.abc.net.au/news/2015-02-17/before-after-test/6088946'
         )
-      ).to.be('6088946');
+      ).toBe('6088946');
       expect(
         url2cmid(
           'http://nucwed.aus.aunty.abc.net.au/news/2015-02-17/before-after-test/6088947?'
         )
-      ).to.be('6088947');
+      ).toBe('6088947');
       expect(
         url2cmid(
           'http://nucwed.aus.aunty.abc.net.au/news/2015-02-17/before-after-test/6088948?querystring=bam'
         )
-      ).to.be('6088948');
+      ).toBe('6088948');
       expect(
         url2cmid(
           'http://nucwed.aus.aunty.abc.net.au/news/2015-02-17/before-after-test/60889475#'
         )
-      ).to.be('60889475');
+      ).toBe('60889475');
       expect(
         url2cmid(
           'http://nucwed.aus.aunty.abc.net.au/news/2015-02-17/before-after-test/60889485#fragment'
         )
-      ).to.be('60889485');
+      ).toBe('60889485');
       expect(
         url2cmid(
           'http://www.abc.net.au/news/2015-02-17/before-after-test/6088949'
         )
-      ).to.be('6088949');
-      expect(url2cmid('http://www.abc.net.au/news/6088950')).to.be('6088950');
+      ).toBe('6088949');
+      expect(url2cmid('http://www.abc.net.au/news/6088950')).toBe('6088950');
       expect(
         url2cmid(
           'http://www.abc.net.au/news/2015-02-17/before-390843999/6088951'
         )
-      ).to.be('6088951');
+      ).toBe('6088951');
       expect(
         url2cmid('http://www.abc.net.au/news/2015-02-17/2838895-test/6088952')
-      ).to.be('6088952');
+      ).toBe('6088952');
       expect(
         url2cmid(
           'http://www.abc.net.au/news/linkableblob/6128592/data/picasso-before-data.jpg'
         )
-      ).to.be('6128592');
+      ).toBe('6128592');
       expect(
         url2cmid('http://www.abc.net.au/news/image/5706180-16x9-220x124.jpg')
-      ).to.be('5706180');
+      ).toBe('5706180');
       expect(
         url2cmid(
           'http://www.abc.net.au/cm/lb/8734198/data/sean-spicer-data.jpg'
         )
-      ).to.be('8734198');
+      ).toBe('8734198');
     });
 
     it('should be false', function() {
-      expect(url2cmid('')).to.be(false);
-      expect(url2cmid('http://www.abc.net.au/news/')).to.be(false);
-      expect(url2cmid('http://www.abc.net.au/news/qld/')).to.be(false);
-      expect(url2cmid('http://www.example.com')).to.be(false);
+      expect(url2cmid('')).toBe(false);
+      expect(url2cmid('http://www.abc.net.au/news/')).toBe(false);
+      expect(url2cmid('http://www.abc.net.au/news/qld/')).toBe(false);
+      expect(url2cmid('http://www.example.com')).toBe(false);
     });
   });
 });

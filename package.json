@@ -1,20 +1,47 @@
 {
-  "name": "@abcnews/url2cmid",
   "version": "1.0.1",
-  "description": "Get a CoreMedia ID from a URL.",
-  "main": "index.js",
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
   },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "release": "np"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@abcnews/url2cmid",
+  "author": "Simon Elvery",
+  "module": "dist/url2cmid.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/abcnews/url2cmid"
+    "url": "https://github.com/abcnews/url2cmid.git"
   },
-  "author": "Simon Elvery",
-  "license": "None",
   "devDependencies": {
-    "expect.js": "^0.3.1",
-    "grunt": "^0.4.5",
-    "mocha": "^2.1.0"
+    "husky": "^4.2.5",
+    "np": "^6.4.0",
+    "tsdx": "^0.13.3",
+    "tslib": "^2.0.1",
+    "typescript": "^4.0.2"
   }
 }
