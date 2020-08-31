@@ -70,4 +70,8 @@ describe('url2cmid', function() {
       expect(url2cmid('http://www.example.com')).toBe(false);
     });
   });
+
+  describe('should throw a type error', () => {
+    expect(() => url2cmid(undefined)).toThrowError();
+  });
 });
