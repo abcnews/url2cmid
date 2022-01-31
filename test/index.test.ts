@@ -49,6 +49,9 @@ describe('url2cmid', function() {
         url2cmid('http://www.abc.net.au/news/2015-02-17/2838895-test/6088952')
       ).toBe('6088952');
       expect(
+        url2cmid('http://www.abc.net.au/news/2015-02-17/2838895-test/6088952/')
+      ).toBe('6088952');
+      expect(
         url2cmid(
           'http://www.abc.net.au/news/linkableblob/6128592/data/picasso-before-data.jpg'
         )
